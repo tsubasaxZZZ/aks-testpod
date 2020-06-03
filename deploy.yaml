@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    run: signal
+  name: signal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: signal
+  template:
+    metadata:
+      labels:
+        run: signal
+    spec:
+      containers:
+        - image: tsubasaxzzz/signal
+          name: signal
+          args:
+            - "-d"
+            - "15"
+            - "-t"
+            - "10"
+          imagePullPolicy: Always
+          #lifecycle:
+          #preStop:
+          #exec:
+          #command: ["sh", "-c", "sleep 10;"]
+#      terminationGracePeriodSeconds: 60
