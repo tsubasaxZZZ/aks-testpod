@@ -19,9 +19,9 @@ spec:
           name: signal
           args:
             - "-d"
-            - "15"
-            - "-t"
             - "10"
+            - "-t"
+            - "15"
           imagePullPolicy: Always
           #lifecycle:
           #preStop:
