@@ -34,13 +34,19 @@ spec:
         - image: tsubasaxzzz/signal
           name: signal
           args:
+            - "/signal"
             - "-d"
-            - "10"
+            - "40"
             - "-t"
-            - "0"
+            - "15"
           imagePullPolicy: Always
           #lifecycle:
           #preStop:
           #exec:
-          #command: ["sh", "-c", "sleep 10;"]
-#      terminationGracePeriodSeconds: 60
+          #command:
+          #[
+          #"sh",
+          #"-c",
+          #"echo started preStart;sleep 11;echo finised preStart;",
+          #]
+      terminationGracePeriodSeconds: 60
